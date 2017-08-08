@@ -131,6 +131,14 @@ app.put('/tags/:id', (req, res, next) => {
 })
 
 //  Delete - Delete /tags/{:id}
+app.delete('/tags/:id', (req, res, next) => {
+  const id = req.params.id
+  dal.deleteTag(id, (err, result) => {
+    if (err) next(new HTTPError(err.status, err.message, err))
+    console.log('DELETE /tags/:id result', result)
+    res.status(200).send(result)
+  })
+})
 
 //  List - Get /tags/
 
