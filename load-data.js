@@ -16,6 +16,19 @@ db
       photo:
         'http://beverlypress.com/wp-content/uploads/2016/07/hot-dog-06.jpg',
       artist: 'Unknown'
+    },
+    {
+      _id: 'tag_2232_1e4ef292-5a2c-4bf4-a6ed-76w8e109vf93',
+      type: 'tag',
+      lat: '30.7765° N',
+      long: '80.9311° W',
+      creatorName: 'EyYoTony',
+      creatorId: '2232',
+      artTitle: 'corndog galore',
+      dateTagged: '9:25AM 8/9/2017',
+      photo:
+        'http://www.wienerschnitzel.com/wp-content/uploads/2014/10/corndog_main.jpg',
+      artist: 'Unknown'
     }
   ])
   .then(function(result) {

@@ -141,6 +141,16 @@ app.delete('/tags/:id', (req, res, next) => {
 })
 
 //  List - Get /tags/
+app.get('/tags', function(req, res, next) {
+  const limit = pathOr(5, ['query', 'limit'], req)
+  const lastItem = pathOr(null, ['query', 'lastItem'], req)
+  const filter = pathOr(null, ['query', 'filter'], req)
+
+  dal.listTags(Number(limit), lastItem, filter, function(err, data) {
+    if (err) return next(new HTTPError(err.status, err.message, err))
+    res.status(200).send(data)
+  })
+})
 
 ///////////////////////
 //       USER        //

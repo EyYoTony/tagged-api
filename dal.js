@@ -28,6 +28,27 @@ const updateTag = (profile, callback) => dalHelper.update(profile, callback)
 
 const deleteTag = (id, callback) => dalHelper.deleteDoc(id, callback)
 
+const listTags = (limit, lastItem, filter, cb) => {
+  var query = {}
+  if (filter) {
+    const arrFilter = split(':', filter)
+    const filterField = head(arrFilter)
+    const filterValue = isNaN(Number(last(arrFilter)))
+      ? last(arrFilter)
+      : Number(last(arrFilter))
+    const selectorValue = arrFilter.length === 3
+      ? assoc(filterField, assoc('$' + arrFilter[1], filterValue, {}), {})
+      : assoc(filterField, filterValue, {})
+    query = { selector: selectorValue, limit }
+  } else if (lastItem) {
+    query = { selector: { _id: { $gt: lastItem }, type: 'tag' }, limit }
+  } else {
+    query = { selector: { _id: { $gte: null }, type: 'tag' }, limit }
+  }
+
+  dalHelper.findDocs(query, cb)
+}
+
 ////////////////////
 //     USERS      //
 ////////////////////
@@ -40,7 +61,8 @@ const dal = {
   createTag,
   readTag,
   updateTag,
-  deleteTag
+  deleteTag,
+  listTags
 }
 
 module.exports = dal
