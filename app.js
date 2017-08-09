@@ -5,6 +5,8 @@ const dal = require('./dal.js')
 const HTTPError = require('node-http-error')
 const bodyParser = require('body-parser')
 const checkRequiredFields = require('./lib/check-required-fields')
+const cors = require('cors')
+const helmet = require('helmet')
 const port = process.env.PORT || 5000
 const { pathOr, keys, pick } = require('ramda')
 
@@ -20,6 +22,8 @@ const tagReqFields = checkRequiredFields([
 
 const userReqFields = checkRequiredFields(['username', 'userId', 'picture'])
 
+app.use(cors({ credentials: true }))
+app.use(helmet())
 app.use(bodyParser.json())
 
 app.get('/', function(req, res, next) {
