@@ -8,7 +8,7 @@ db
       _id: 'tag_2342_1e4ef292-5a2c-4bf4-a6ed-35e3e297eb98',
       type: 'tag',
       lat: '32.7765° N',
-      long: '79.9311° W',
+      lng: '79.9311° W',
       creatorName: 'EyYoTony',
       creatorId: '2232',
       artTitle: 'hotdogs galore',
@@ -18,14 +18,14 @@ db
       artist: 'Unknown'
     },
     {
-      _id: 'tag_2232_1e4ef292-5a2c-4bf4-a6ed-76w8e109vf93',
+      _id: 'tag_2232_1e4ef292-5a2c-4bf4-a6ed-isud91kj2',
       type: 'tag',
       lat: '30.7765° N',
-      long: '80.9311° W',
-      creatorName: 'EyYoTony',
-      creatorId: '2232',
-      artTitle: 'corndog galore',
-      dateTagged: '9:25AM 8/9/2017',
+      lng: '80.9311° W',
+      creatorName: 'MemeMachine',
+      creatorId: '3245',
+      artTitle: 'definitely not a corndog',
+      dateTagged: '10:05AM 8/11/2017',
       photo:
         'http://www.wienerschnitzel.com/wp-content/uploads/2014/10/corndog_main.jpg',
       artist: 'Unknown'

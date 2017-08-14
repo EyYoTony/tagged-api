@@ -13,7 +13,8 @@ const uuid = require('uuid')
 // also has 'artist' which defaults to 'Unknown' if no field
 
 const createTag = (tag, callback) => {
-  const id = pkGenerator('tag_', `${prop('creatorId', tag)} ${uuid.v4()}`)
+  // const id = pkGenerator('tag_', `${prop('creatorId', tag)} ${uuid.v4()}`)
+  const id = pkGenerator('tag_', `${prop('artTitle', tag)} ${uuid.v4()}`)
   const artCreator = pathOr('Unknown', ['artist'], tag)
   tag = assoc('artist', artCreator, tag)
   tag = assoc('_id', id, tag)
