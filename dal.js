@@ -36,10 +36,12 @@ const listTags = (limit, lastItem, filter, cb) => {
     const filterField = head(arrFilter)
     const filterValue = isNaN(Number(last(arrFilter)))
       ? last(arrFilter)
-      : Number(last(arrFilter))
-    const selectorValue = arrFilter.length === 3
-      ? assoc(filterField, assoc('$' + arrFilter[1], filterValue, {}), {})
-      : assoc(filterField, filterValue, {})
+      : last(arrFilter)
+    console.log(filter)
+    const selectorValue =
+      arrFilter.length === 3
+        ? assoc(filterField, assoc('$' + arrFilter[1], filterValue, {}), {})
+        : assoc(filterField, filterValue, {})
     query = { selector: selectorValue, limit }
   } else if (lastItem) {
     query = { selector: { _id: { $gt: lastItem }, type: 'tag' }, limit }

@@ -10,7 +10,13 @@ const helmet = require('helmet')
 const port = process.env.PORT || 5000
 const { pathOr, keys, pick } = require('ramda')
 
-const tagReqFields = checkRequiredFields(['position', 'artTitle', 'photo'])
+const tagReqFields = checkRequiredFields([
+  'position',
+  'artTitle',
+  'photo',
+  'creatorName',
+  'creatorId'
+])
 //'dateTagged',
 // 'creatorName',
 // 'creatorId',

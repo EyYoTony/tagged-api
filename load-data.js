@@ -11,7 +11,7 @@ db
       lng: '79.9311° W',
       creatorName: 'EyYoTony',
       creatorId: '2232',
-      artTitle: 'hotdogs galore',
+      artTitle: 'Dont delete me ',
       dateTagged: '11:21AM 8/8/2017',
       photo:
         'http://beverlypress.com/wp-content/uploads/2016/07/hot-dog-06.jpg',
@@ -22,9 +22,9 @@ db
       type: 'tag',
       lat: '30.7765° N',
       lng: '80.9311° W',
-      creatorName: 'MemeMachine',
+      creatorName: 'EyYoTony',
       creatorId: '3245',
-      artTitle: 'definitely not a corndog',
+      artTitle: 'Delete me please',
       dateTagged: '10:05AM 8/11/2017',
       photo:
         'http://www.wienerschnitzel.com/wp-content/uploads/2014/10/corndog_main.jpg',
