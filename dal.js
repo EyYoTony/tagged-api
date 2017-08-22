@@ -19,7 +19,6 @@ const createTag = (tag, callback) => {
   tag = assoc('artist', artCreator, tag)
   tag = assoc('_id', id, tag)
   tag = assoc('type', 'tag', tag)
-  console.log('profile', tag)
   dalHelper.create(tag, callback)
 }
 
@@ -37,7 +36,7 @@ const listTags = (limit, lastItem, filter, cb) => {
     const filterValue = isNaN(Number(last(arrFilter)))
       ? last(arrFilter)
       : last(arrFilter)
-    console.log(filter)
+    //Number pasring lost information if the number's length is greater than 15. keeping it a string seems to still work.
     const selectorValue =
       arrFilter.length === 3
         ? assoc(filterField, assoc('$' + arrFilter[1], filterValue, {}), {})

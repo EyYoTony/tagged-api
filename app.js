@@ -75,13 +75,11 @@ app.put('/tags/:id', (req, res, next) => {
     '_id',
     '_rev',
     'type',
-    'lat',
-    'long',
+    'position',
     'creatorName',
     'creatorId',
     'artTitle',
     'artist',
-    'dateTagged',
     'photo'
   ])
 
@@ -115,8 +113,7 @@ app.put('/tags/:id', (req, res, next) => {
         '_id',
         '_rev',
         'type',
-        'lat',
-        'long',
+        'position',
         'creatorName',
         'creatorId',
         'artTitle',
